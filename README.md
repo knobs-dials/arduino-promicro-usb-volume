@@ -4,6 +4,8 @@ A USB volume and mute button
 
 ![v0.1](https://raw.githubusercontent.com/scarfboy/arduino-promicro-usb-volume/main/v0.1.JPG)
 
+Version 0.1, for wiring reference.
+
 ## Hardware
 
 * Arduino Pro Micro, which is basically a mini Leonardo, and based on the already-USB-capable ATmega32U4
