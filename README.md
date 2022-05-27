@@ -8,7 +8,7 @@ Version 0.1, for wiring reference.
 
 ## Hardware
 
-* Arduino Pro Micro, which is basically a mini Leonardo, and based on the already-USB-capable ATmega32U4
+* Arduino Pro Micro, which is basically a mini Leonardo, and based on the already-USB-capable ATmega32U4 which makes makes life simpler when doing HID device stuff
 
 * HW-040 rotary encoder. Any encoder should do. The ability to press it for mute is nice.
 
