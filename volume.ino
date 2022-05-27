@@ -35,15 +35,12 @@ void setup() {
   Consumer.begin();                  // https://github.com/NicoHood/HID/wiki/Consumer-API
   Timer1.initialize( 1000 );         // 1kHz servicing the encoder
   Timer1.attachInterrupt( timer_service );
-  //Serial.begin(115200); // only for debug
 }
 
 
 void loop() {
   int encoder_change = encoder.get_count();
   if (encoder_change != 0) {
-    //Serial.println( encoder_change );
-
     if (encoder_change>0) {
       for (char t = up_nudges;t;t--) {
         Consumer.press(MEDIA_VOLUME_UP);
@@ -63,7 +60,6 @@ void loop() {
   if (button) {
     if (button_state == 0) {
       button_state = 1000;
-      //Serial.println('M');    
       Consumer.press(MEDIA_VOLUME_MUTE);
       Consumer.release(MEDIA_VOLUME_MUTE);
     } // else we're still ignoring it
