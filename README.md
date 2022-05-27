@@ -11,6 +11,11 @@ A USB volume and mute button, made of:
 
 * USB cable - stress-relieved by that case
 
+
+* Third-party Arduino libraries 
+  * HID-Project
+  * BasicEncoder
+
 * this code
 
 
