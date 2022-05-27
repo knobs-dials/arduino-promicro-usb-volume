@@ -9,7 +9,7 @@
  *  Can repeat vol+ and vol- presses to go up/down faster, 
  *    because the encoder is fairly coarse (30 is jumps) so is effectively a physical rate limit.
  *  
- *  By default also presses vol- more than vol+,
+ *  By default also presses vol- *more* than vol+,
  *    so that a "crap volume down" panic response works better,
  *    and turning up is a little more precise
  */
@@ -27,9 +27,9 @@ void timer_service() {
 }
 
 void setup() {
-  pinMode( 10, INPUT_PULLUP );
-  pinMode( 14, INPUT_PULLUP );
-  pinMode( 16, INPUT_PULLUP );
+  pinMode( 10, INPUT_PULLUP );  // HW-040 encoder
+  pinMode( 14, INPUT_PULLUP );  // HW-040 encoder
+  pinMode( 16, INPUT_PULLUP );  // HW-040 button
   Consumer.begin();                  // https://github.com/NicoHood/HID/wiki/Consumer-API
   Timer1.initialize( 1000 );         // 1kHz servicing the encoder
   Timer1.attachInterrupt( timer_service );
@@ -39,19 +39,19 @@ void setup() {
 void loop() {
   int encoder_change = encoder.get_count();
   if (encoder_change != 0) {
-    if (encoder_change>0) {
+    encoder.reset();
+    if (encoder_change > 0) {
       for (char t=up_nudges; t; t--) {
         Consumer.press(MEDIA_VOLUME_UP);
         Consumer.release(MEDIA_VOLUME_UP);
       }
     }
-    if (encoder_change<0) {
+    if (encoder_change < 0) {
       for (char t=down_nudges; t; t--) {
         Consumer.press(MEDIA_VOLUME_DOWN);
         Consumer.release(MEDIA_VOLUME_DOWN);
       }
     }
-    encoder.reset();
   }
 
   char button = !digitalRead(16);
