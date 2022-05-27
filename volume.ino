@@ -16,11 +16,9 @@
 #include <BasicEncoder.h>
 #include <TimerOne.h>
 #include <HID-Project.h>
-#include <HID-Settings.h>
 
-int up_nudges     = 3,
-    down_nudges   = 5,
-    button_state  = 0;  // state to avoid repeat presses, to ignore bounce on release, and to rate limit a little in the process
+char up_nudges    = 3,  down_nudges = 5;
+int  button_state = 0;  // state to avoid repeat presses, to ignore bounce on release, and to rate limit a little in the process
 
 BasicEncoder encoder( 14, 10 );      // the pins I happen to use
 
@@ -42,13 +40,13 @@ void loop() {
   int encoder_change = encoder.get_count();
   if (encoder_change != 0) {
     if (encoder_change>0) {
-      for (char t = up_nudges;t;t--) {
+      for (char t=up_nudges; t; t--) {
         Consumer.press(MEDIA_VOLUME_UP);
         Consumer.release(MEDIA_VOLUME_UP);
       }
     }
     if (encoder_change<0) {
-      for (char t = down_nudges;t;t--) {
+      for (char t=down_nudges; t; t--) {
         Consumer.press(MEDIA_VOLUME_DOWN);
         Consumer.release(MEDIA_VOLUME_DOWN);
       }
