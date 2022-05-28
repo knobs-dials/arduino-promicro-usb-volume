@@ -12,7 +12,7 @@ Version 0.1, for wiring reference.
 
 * HW-040 rotary encoder. Any encoder should do. The ability to press it for mute is nice.
 
-* A slightly widened version of the following case, to also allow for the slightly wider encoder's board 
+* A slightly widened version of the following case, to also allow for the slightly wider PCB of the encoder
   * https://www.thingiverse.com/thing:2389583
 
 * USB cable - stress-relieved by that case
