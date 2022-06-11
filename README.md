@@ -1,10 +1,12 @@
 # arduino-promicro-volume
 
-A USB volume and mute button
+A USB volume and mute button for computers, done by acting like a keyboard.
+
 
 ![v0.1](https://raw.githubusercontent.com/scarfboy/arduino-promicro-usb-volume/main/v0.1.JPG)
 
 Version 0.1, for wiring reference.
+
 
 ## Hardware
 
