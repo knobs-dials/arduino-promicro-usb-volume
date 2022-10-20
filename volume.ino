@@ -9,6 +9,7 @@
  *  Sets up 1000Hz timer-based calls to ensure regular service of the encoder regularly. 
  *    the main loop reads out the state the encoder updates, and sends keyboard commands
  *  The button is serviced from the main loop - because it has nothing else to do anyway.
+ *    it's not debounced as much as it is rate limited based on a counter 
  *  
  *  Can repeat vol+ and vol- presses to go up/down faster, 
  *    because this encoder is fairly coarse (30 jumps per rotation) 
