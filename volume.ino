@@ -6,12 +6,17 @@
  *  -  HID-Project
  *  -  BasicEncoder
  *  
- *  Can repeat vol+ and vol- presses to go up/down faster, 
- *    because the encoder is fairly coarse (30 is jumps) so is effectively a physical rate limit.
+ *  Sets up 1000Hz timer-based calls to ensure regular service of the encoder regularly. 
+ *    the main loop reads out the state the encoder updates, and sends keyboard commands
+ *  The button is serviced from the main loop - because it has nothing else to do anyway.
  *  
- *  By default also presses vol- *more* than vol+,
+ *  Can repeat vol+ and vol- presses to go up/down faster, 
+ *    because this encoder is fairly coarse (30 jumps per rotation) 
+ *    which is effectively a physical rate limit and I want a quick response.
+ *  
+ *  By default also presses vol- *more* than it would vol+,
  *    so that a "crap volume down" panic response works better,
- *    and turning up is a little more precise
+ *    and turning it up is a little more precise.
  */
 #include <BasicEncoder.h>
 #include <TimerOne.h>
