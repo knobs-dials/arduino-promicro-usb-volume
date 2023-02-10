@@ -14,7 +14,7 @@ Version 0.1, for wiring reference.
 
 * HW-040 rotary encoder. Any encoder should do. 
   * The ability to press it for mute is nice. I personally use that more than the turning.
-  * You may wish to find an encoder that _does_ have threading to fasten it. This one doesn't, so you need to rest its board on something - something that won't break over time due to hitting it for mute
+  * You may wish to find an encoder that _does_ have threading to fasten it. This one doesn't, so you need to rest its board on something - something that won't break over time due to hitting it for mute (hot snot works pretty well, though)
 
 * A slightly widened version of the following case, to also allow for the slightly wider PCB of the encoder
   * https://www.thingiverse.com/thing:2389583
