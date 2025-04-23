@@ -23,10 +23,8 @@ Version 0.1, for wiring reference.
 
 ## Software
 
-* this code
+* the code in `volume.ino`
 
 * Third-party Arduino libraries 
   * HID-Project
   * BasicEncoder
-
-
